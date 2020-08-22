@@ -9,11 +9,12 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="manifest" href="./manifest.json">
         <!-- Expires: 2020-01-12 -->
-        <meta http-equiv="origin-trial" content="Al/WMYsR2HwBS4HZP3STfLXt4OyYjX+wdUsUg7uXyCST6ua4QepJw5SeodPj5BnuVIdQ3UYwp6ps3vd+6p6KEQcAAABpeyJvcmlnaW4iOiJodHRwczovL3dhdmVkcm9tLmNvbTo0NDMiLCJmZWF0dXJlIjoiTmF0aXZlRmlsZVN5c3RlbSIsImV4cGlyeSI6MTU3ODg3OTE4NywiaXNTdWJkb21haW4iOnRydWV9">
+        <meta http-equiv="origin-trial" content="Ap2bTxDZe+E4Fz9EzYMIaauyaGiEOiv651lIV59aGxxAhGzLRM01yd6uIKCXj28nIRaVa9z0x9zrJfJ0tX3/5AUAAABpeyJvcmlnaW4iOiJodHRwczovL3dhdmVkcm9tLmNvbTo0NDMiLCJmZWF0dXJlIjoiTmF0aXZlRmlsZVN5c3RlbSIsImV4cGlyeSI6MTU4MzEwMDg2NSwiaXNTdWJkb21haW4iOnRydWV9">
 
         <script src="scripts/codemirror-compressed.js"></script>
         <script src="scripts/lodash.min.js"></script>
         <script src="skins/default.js"></script>
+        <script src="skins/dark.js"></script>
         <script src="skins/narrow.js"></script>
         <script src="skins/lowkey.js"></script>
         <script src="wavedrom.min.js"></script>
@@ -61,6 +62,19 @@
 
             ga('create', 'UA-21660728-3', 'auto');
             ga('send', 'pageview');
+        </script>
+        <script>
+            // define a handler to catch keyboard shortcuts
+            document.onkeyup = function(e) {
+                // key code 83 = 's'
+                if (e.ctrlKey && e.which == 83) {
+                    WaveDrom.saveJSON();
+                }
+                // key code 79 = 'o'
+                else if (e.ctrlKey && e.which == 79) {
+                    WaveDrom.loadJSON();
+                }
+            };
         </script>
     </body>
 </html>
